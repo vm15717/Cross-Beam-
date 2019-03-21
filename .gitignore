@@ -20,3 +20,5 @@
 *.simlog
 *.rpy.*
 *.asv
+*.0*
+*.stt
