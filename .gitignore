@@ -6,3 +6,17 @@
 *.mat
 *.csv
 *.lck
+*.mtx
+*.rpy
+*.odb
+*.prt
+*.inp
+*.sta
+*.cid
+*.SMAbulk
+*.env
+*.mdl
+*.rec
+*.simlog
+
+
