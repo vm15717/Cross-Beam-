@@ -14,7 +14,7 @@ af=linspace(-1,1,10);
 forces=af;
 excite=[1];
 tR=(1e-1:1e-1:1e+0)*10;
-for k=1%:length(tR)
+for k=1:length(tR)
     allmodaldispl=[];
     allmodalforce=[];
     for i=1:length(forces)
@@ -36,7 +36,7 @@ for k=1%:length(tR)
 end
 thetaf3=[];
 thetaf9=[];
-for k=1%:length(tR)
+for k=1:length(tR)
     q1=finalmodaldispl(1,:,k);
     fq1=finalmodalforce(1,:,k);
     q2=finalmodaldispl(56,:,k);
