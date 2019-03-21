@@ -131,8 +131,8 @@ def TorsMerging():
     # Meshing 
     p.seedPart(size=0.0075, deviationFactor=0.1, minSizeFactor=0.1)
     elemType1 = mesh.ElemType(elemCode=C3D20, elemLibrary=STANDARD)
-    elemType2 = mesh.ElemType(elemCode=C3D15, elemLibrary=STANDARD)
-    elemType3 = mesh.ElemType(elemCode=C3D10, elemLibrary=STANDARD)
+    elemType2 = mesh.ElemType(elemCode=C3D20, elemLibrary=STANDARD)
+    elemType3 = mesh.ElemType(elemCode=C3D20, elemLibrary=STANDARD)
     p = mdb.models['Model-1'].parts['Part-3']
     c = p.cells
     cells = c
@@ -230,12 +230,12 @@ def TorsMerging():
     **
     **""")
     ## Job
-    mdb.Job(name='Job-2', model='Model-1', description='', type=ANALYSIS, 
+    mdb.Job(name='Torsion1', model='Model-1', description='', type=ANALYSIS, 
         atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, 
         memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
         explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
         modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
         scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
         numGPUs=0)
-    mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+    mdb.jobs['Torsion1'].submit(consistencyChecking=OFF)
 TorsMerging()

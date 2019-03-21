@@ -1,11 +1,11 @@
 tic
 %Run freq. analysis of case, built into Freq_Analysis.py
-dos('abaqus cae noGUI=TorsMerging.py');
-toc
-[Phi,Lam,N,diagKs]=Get_Modal_v2;
+%dos('abaqus cae noGUI=TorsMerging.py');
+%toc
+%[Phi,Lam,N,diagKs]=Get_Modal_v2;
 % Run matlab file to convert mass and stiff matrices to get modal forces as
 % .csv file to plug back into next abaqus file
-%load('matrices2.mat');
+load('matrices2.mat');
 p=0;
 af=linspace(-1,1,10);
 excite=[1];

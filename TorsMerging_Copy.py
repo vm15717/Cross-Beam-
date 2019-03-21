@@ -131,8 +131,8 @@ def TorsMerging():
     # Meshing 
     p.seedPart(size=0.0075, deviationFactor=0.1, minSizeFactor=0.1)
     elemType1 = mesh.ElemType(elemCode=C3D20, elemLibrary=STANDARD)
-    elemType2 = mesh.ElemType(elemCode=C3D15, elemLibrary=STANDARD)
-    elemType3 = mesh.ElemType(elemCode=C3D10, elemLibrary=STANDARD)
+    elemType2 = mesh.ElemType(elemCode=C3D20, elemLibrary=STANDARD)
+    elemType3 = mesh.ElemType(elemCode=C3D20, elemLibrary=STANDARD)
     p = mdb.models['Model-1'].parts['Part-3']
     c = p.cells
     cells = c
@@ -225,7 +225,7 @@ def TorsMerging():
     mdb.models['Model-1'].steps['Step-2'].setValues(nlgeom=ON)  
     instanceNodes = mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].nodes
     #Import Forces
-    file=csv.reader(open('C:/Users/vm15717/OneDrive - University of Bristol/Documents/Downloads/Cross Beam Mk1/myFile2.csv','r'))
+    file=csv.reader(open('C:/Users/vm15717/OneDrive - University of Bristol/Documents/Downloads/Cross Beam Mk3/myFile2.csv','r'))
     n=[]
     for row in file:
         n.append(row)
@@ -239,12 +239,13 @@ def TorsMerging():
            region=myRegion, cf1=cf11, cf2=cf22, cf3=cf33, distributionType=UNIFORM, field='', 
            localCsys=None)
     ## Job
-    mdb.Job(name='Job-2', model='Model-1', description='', type=ANALYSIS, 
+    mdb.Job(name='Torsion', model='Model-1', description='', type=ANALYSIS, 
         atTime=None, waitMinutes=0, waitHours=0, queue=None, memory=90, 
         memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
         explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
         modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
         scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
         numGPUs=0)
-    mdb.jobs['Job-2'].submit(consistencyChecking=OFF)
+    mdb.jobs['Torsion'].submit(consistencyChecking=OFF)
+    mdb.jobs['Torsion'].waitForCompletion()
 TorsMerging()

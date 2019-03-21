@@ -9,9 +9,9 @@ from odbAccess import *
 from textRepr import *
 import numpy as np
 import csv
-odbName='Job-2'
+odbName='Torsion'
 odb=openOdb(odbName+'.odb',readOnly=True)
-step1=odb.steps['Step-1']
+step1=odb.steps['Step-2']
 frame=step1.frames[-1]
 displ=frame.fieldOutputs['U']
 displvalues=displ.values
