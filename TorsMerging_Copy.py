@@ -247,5 +247,5 @@ def TorsMerging():
         scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
         numGPUs=0)
     mdb.jobs['Torsion'].submit(consistencyChecking=OFF)
-    mdb.jobs['Torsion'].waitForCompletion()
+    ##mdb.jobs['Torsion'].waitForCompletion()
 TorsMerging()

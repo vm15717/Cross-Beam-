@@ -2,8 +2,8 @@ function [Phi,Lam,N,diagKs,M]=Get_Modal_v2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 tic
-TorsionalFreq_MASS1=load('Job-2_MASS1.mtx');
-TorsionalFreq_STIF1=load('Job-2_STIF1.mtx');
+TorsionalFreq_MASS1=load('Torsion1_MASS1.mtx');
+TorsionalFreq_STIF1=load('Torsion1_STIF1.mtx');
 toc
 
 %%%%%%%%%%%%%%%%%%%%
