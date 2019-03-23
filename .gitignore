@@ -24,3 +24,4 @@
 *.stt
 *.png
 *.fig
+*.simdir*
