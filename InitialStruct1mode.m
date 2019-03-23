@@ -10,8 +10,8 @@ p=0;
 af=linspace(-1,1,10);
 excite=[1];
 nm=0;
-sf=(1e-1:1e-1:1e+0)*10;
-for k= 2:length(sf)
+sf=(1e-1:1e-1:2.5e+0)*10;
+for k= 15:length(sf)
     for i = 1:length(af)
         p=p+1;
         forcecalc(Phi,Lam,N,diagKs,af(i)*sf(k),excite);
